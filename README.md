@@ -2,6 +2,13 @@
 
 Palau Sustainable Journey：React、Vite、TypeScript、Tailwind CSS、React Router、Lucide React 製作的繁體中文互動旅遊網站。無後端、無登入即可在本機與 Firebase 瀏覽。Sites 私人發佈版本則由平台控制擁有者存取權。
 
+## 公開交付狀態（2026-11-20）
+
+- GitHub Public Repository：https://github.com/fortune-ai-ux/palau-sustainable-journey
+- Firebase 專案：`palau-journey-2027-fortune`，已登入授權；部署結果見 DEPLOYMENT.md。
+- `.firebaserc` 已設定 default 專案。後續可使用 `npm run build` 與 `firebase deploy --only hosting` 更新。
+- 真實預設行程修訂：https://github.com/fortune-ai-ux/palau-sustainable-journey/commit/1f00ccb
+
 ## 已完成功能
 
 - 六個頁面：首頁、每日行程、景點介紹、行前準備、旅行記帳、計畫介紹。
@@ -120,7 +127,7 @@ git show 1f00ccb -- src/data/itinerary.json
 
 ## GitHub 公開 Repository（需要你操作／授權）
 
-目前未建立或公開 GitHub Repository。Sites 的私人來源儲存庫不等於公開 GitHub 課程證據。請在 GitHub 登入後新增空白 Repository，名稱例如 `palau-sustainable-journey`，選 **Public**，不要勾選自動產生 README、.gitignore 或 License。
+GitHub Repository 已依使用者授權建立為 Public 並推送全部歷史。以下保留另建儲存庫的操作指引。Sites 的私人來源儲存庫不等於公開 GitHub 課程證據。請在 GitHub 登入後新增空白 Repository，名稱例如 `palau-sustainable-journey`，選 **Public**，不要勾選自動產生 README、.gitignore 或 License。
 
 將 `YOUR_ACCOUNT` 替換成你的 GitHub 帳號：
 
@@ -141,7 +148,7 @@ GitHub 驗證使用 Git Credential Manager／瀏覽器登入，勿把 token 寫�
 
 ## Firebase Hosting 部署（優先支援）
 
-沒有使用或假設任何 Firebase 專案權限；部署設定已完成。請先於 Firebase Console 建立／選擇自己的專案、啟用 Hosting，再執行：
+已使用本機 Firebase 登入授權，建立獨立專案 `palau-journey-2027-fortune` 並設定部署。以下保留重新登入或另選專案的操作指引。請先於 Firebase Console 建立／選擇自己的專案、啟用 Hosting，再執行：
 
 ```powershell
 npm ci
@@ -165,7 +172,7 @@ firebase deploy --only hosting --project YOUR_FIREBASE_PROJECT_ID
 
 ## 評分交付前仍需確認
 
-1. 自行建立並公開 GitHub Repository、push 全部真實提交。
-2. 自行授權 Firebase 專案並部署，提供老師免登入網址。Sites 私人網址不滿足老師匿名訪問要求。
+1. GitHub Public Repository 已建立並推送；交付時提供上方連結。
+2. Firebase 已授權，公開部署網址與驗證結果見 DEPLOYMENT.md。Sites 私人網址仍保留原權限。
 3. 主辦單位確認未指名設施、集合地點、行程時間、機票、入境與參訪安排。
 4. 若課程要求每個設施皆有其實景照片，需補齊獲授權的對應照片；目前以明確標示的帛琉風景示意呈現。
