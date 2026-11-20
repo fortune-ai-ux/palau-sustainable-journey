@@ -1,0 +1,630 @@
+[
+  {
+    "id": "day-1",
+    "date": "2027-07-29",
+    "dayNumber": 1,
+    "title": "抵達帛琉與團隊準備",
+    "description": "",
+    "sdgs": [],
+    "activities": [
+      {
+        "id": "d1-a1",
+        "title": "從桃園國際機場搭機前往帛琉",
+        "description": "從桃園國際機場搭機前往帛琉。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d1-a2",
+        "title": "完成住宿安排",
+        "description": "完成住宿安排。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d1-a3",
+        "title": "環境熟悉",
+        "description": "環境熟悉。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d1-a4",
+        "title": "團隊行程說明",
+        "description": "團隊行程說明。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d1-a5",
+        "title": "共同公約共識座談會",
+        "description": "共同公約共識座談會。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-2",
+    "date": "2027-07-30",
+    "dayNumber": 2,
+    "title": "帛琉永續海洋生態體察 I",
+    "description": "",
+    "sdgs": [
+      14
+    ],
+    "activities": [
+      {
+        "id": "d2-a1",
+        "title": "洛克群島海域探勘",
+        "description": "洛克群島海域探勘。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d2-a2",
+        "title": "當地人文與生態介紹",
+        "description": "當地人文與生態介紹。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-3",
+    "date": "2027-07-31",
+    "dayNumber": 3,
+    "title": "帛琉永續復育實際體察 II",
+    "description": "",
+    "sdgs": [
+      14
+    ],
+    "activities": [
+      {
+        "id": "d3-a1",
+        "title": "洛克群島海域探勘",
+        "description": "洛克群島海域探勘。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d3-a2",
+        "title": "硨磲海域野放復育行動",
+        "description": "硨磲海域野放復育行動。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-4",
+    "date": "2027-08-01",
+    "dayNumber": 4,
+    "title": "帛琉原民部落人文踏查 I：生活與農漁產業升級",
+    "description": "",
+    "sdgs": [
+      2,
+      14
+    ],
+    "activities": [
+      {
+        "id": "d4-a1",
+        "title": "當地早市市場經濟運作觀察",
+        "description": "當地早市市場經濟運作觀察。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d4-a2",
+        "title": "邦交國合作交流",
+        "description": "邦交國合作交流。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d4-a3",
+        "title": "國合會農技團－畜牧中心",
+        "description": "國合會農技團－畜牧中心。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d4-a4",
+        "title": "國合會水產養殖所－硨磲貝復育中心",
+        "description": "國合會水產養殖所－硨磲貝復育中心。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-5",
+    "date": "2027-08-02",
+    "dayNumber": 5,
+    "title": "帛琉原民部落人文踏查 II：原民部落文化",
+    "description": "",
+    "sdgs": [
+      11
+    ],
+    "activities": [
+      {
+        "id": "d5-a1",
+        "title": "當地帛琉私人博物館",
+        "description": "當地帛琉私人博物館。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d5-a2",
+        "title": "帛琉艾萊州文化之旅",
+        "description": "帛琉艾萊州文化之旅。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d5-a3",
+        "title": "百年男人會館",
+        "description": "百年男人會館。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d5-a4",
+        "title": "戰船",
+        "description": "戰船。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d5-a5",
+        "title": "古老部落巡禮",
+        "description": "古老部落巡禮。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-6",
+    "date": "2027-08-03",
+    "dayNumber": 6,
+    "title": "帛琉原民部落人文踏查 III：永續產業",
+    "description": "",
+    "sdgs": [
+      12
+    ],
+    "activities": [
+      {
+        "id": "d6-a1",
+        "title": "參訪當地小農永續農場",
+        "description": "參訪當地小農永續農場。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d6-a2",
+        "title": "參訪永續餐廳",
+        "description": "參訪永續餐廳。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d6-a3",
+        "title": "參訪當地永續飯店 PALAU HOTEL",
+        "description": "參訪當地永續飯店 PALAU HOTEL。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-7",
+    "date": "2027-08-04",
+    "dayNumber": 7,
+    "title": "帛琉原民部落人文踏查 IV：觀光產業",
+    "description": "",
+    "sdgs": [
+      15
+    ],
+    "activities": [
+      {
+        "id": "d7-a1",
+        "title": "巴貝大島天使大瀑布",
+        "description": "巴貝大島天使大瀑布。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d7-a2",
+        "title": "帛琉私人博物館",
+        "description": "帛琉私人博物館。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-8",
+    "date": "2027-08-05",
+    "dayNumber": 8,
+    "title": "帛琉原民部落人文踏查 V：產銷物流與市場經濟",
+    "description": "",
+    "sdgs": [
+      12
+    ],
+    "activities": [
+      {
+        "id": "d8-a1",
+        "title": "參訪當地魚市場經濟運作",
+        "description": "參訪當地魚市場經濟運作。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d8-a2",
+        "title": "參訪 Surangel's Supercenter - Airai",
+        "description": "參訪 Surangel's Supercenter - Airai。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d8-a3",
+        "title": "參訪 WCTC 超級市場",
+        "description": "參訪 WCTC 超級市場。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-9",
+    "date": "2027-08-06",
+    "dayNumber": 9,
+    "title": "帛琉海域周邊人文生態體察 I",
+    "description": "",
+    "sdgs": [
+      14
+    ],
+    "activities": [
+      {
+        "id": "d9-a1",
+        "title": "洛克群島海域探勘",
+        "description": "洛克群島海域探勘。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d9-a2",
+        "title": "BUL 垂釣文化體驗",
+        "description": "BUL 垂釣文化體驗。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-10",
+    "date": "2027-08-07",
+    "dayNumber": 10,
+    "title": "帛琉海域周邊人文生態體察 II",
+    "description": "",
+    "sdgs": [
+      14,
+      15
+    ],
+    "activities": [
+      {
+        "id": "d10-a1",
+        "title": "石錢島海域探勘",
+        "description": "石錢島海域探勘。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d10-a2",
+        "title": "無動力方舟",
+        "description": "無動力方舟。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d10-a3",
+        "title": "藍炭紅樹林之旅",
+        "description": "藍炭紅樹林之旅。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d10-a4",
+        "title": "當地戰爭遺跡考察",
+        "description": "當地戰爭遺跡考察。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d10-a5",
+        "title": "石錢島登島生態探索",
+        "description": "石錢島登島生態探索。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d10-a6",
+        "title": "社區訪談與質性補充",
+        "description": "社區訪談與質性補充。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-11",
+    "date": "2027-08-08",
+    "dayNumber": 11,
+    "title": "帛琉文創工藝與原民經濟分配體察",
+    "description": "",
+    "sdgs": [
+      12
+    ],
+    "activities": [
+      {
+        "id": "d11-a1",
+        "title": "參訪 ECO GLASS FACTORY 琉璃工廠",
+        "description": "參訪 ECO GLASS FACTORY 琉璃工廠。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-12",
+    "date": "2027-08-09",
+    "dayNumber": 12,
+    "title": "永續城市與政治制度體察",
+    "description": "",
+    "sdgs": [
+      11
+    ],
+    "activities": [
+      {
+        "id": "d12-a1",
+        "title": "泛太平洋度假村永續生態園區建立",
+        "description": "泛太平洋度假村永續生態園區建立。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d12-a2",
+        "title": "臺灣大使館參訪",
+        "description": "臺灣大使館參訪。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-13",
+    "date": "2027-08-10",
+    "dayNumber": 13,
+    "title": "永續生態田野調查",
+    "description": "",
+    "sdgs": [
+      15
+    ],
+    "activities": [
+      {
+        "id": "d13-a1",
+        "title": "帛琉當地特有種鳥類與生態解析",
+        "description": "帛琉當地特有種鳥類與生態解析。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-14",
+    "date": "2027-08-11",
+    "dayNumber": 14,
+    "title": "田野觀察與微訪談整理",
+    "description": "",
+    "sdgs": [
+      4
+    ],
+    "activities": [
+      {
+        "id": "d14-a1",
+        "title": "田野觀察整理",
+        "description": "田野觀察整理。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d14-a2",
+        "title": "微訪談整理",
+        "description": "微訪談整理。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d14-a3",
+        "title": "補充訪談",
+        "description": "補充訪談。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  },
+  {
+    "id": "day-15",
+    "date": "2027-08-12",
+    "dayNumber": 15,
+    "title": "成果回饋與返程",
+    "description": "",
+    "sdgs": [],
+    "activities": [
+      {
+        "id": "d15-a1",
+        "title": "帛琉永續 SEG 綜合座談會與回饋交流",
+        "description": "帛琉永續 SEG 綜合座談會與回饋交流。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d15-a2",
+        "title": "跨文化適應力與環境素養自評量表後測問卷",
+        "description": "跨文化適應力與環境素養自評量表後測問卷。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d15-a3",
+        "title": "返程準備",
+        "description": "返程準備。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      },
+      {
+        "id": "d15-a4",
+        "title": "由帛琉機場搭機前往桃園國際機場",
+        "description": "由帛琉機場搭機前往桃園國際機場。",
+        "time": null,
+        "location": "",
+        "placeId": null,
+        "category": "計畫活動",
+        "isCustom": false
+      }
+    ]
+  }
+]

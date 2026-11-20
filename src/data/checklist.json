@@ -1,0 +1,226 @@
+[
+  {
+    "id": "check-1",
+    "title": "護照",
+    "category": "證件與重要資料",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-2",
+    "title": "護照有效期限檢查",
+    "category": "證件與重要資料",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-3",
+    "title": "機票與航班資料",
+    "category": "證件與重要資料",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-4",
+    "title": "住宿資訊",
+    "category": "證件與重要資料",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-5",
+    "title": "旅遊保險資料",
+    "category": "證件與重要資料",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-6",
+    "title": "緊急聯絡人",
+    "category": "證件與重要資料",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-7",
+    "title": "確認最新入境規定",
+    "category": "證件與重要資料",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-8",
+    "title": "日常衣物",
+    "category": "個人用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-9",
+    "title": "個人盥洗用品",
+    "category": "個人用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-10",
+    "title": "防曬用品",
+    "category": "個人用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-11",
+    "title": "防蚊用品",
+    "category": "個人用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-12",
+    "title": "個人常備藥品",
+    "category": "個人用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-13",
+    "title": "防水袋",
+    "category": "個人用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-14",
+    "title": "水壺",
+    "category": "個人用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-15",
+    "title": "手機",
+    "category": "電子設備",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-16",
+    "title": "充電器",
+    "category": "電子設備",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-17",
+    "title": "行動電源",
+    "category": "電子設備",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-18",
+    "title": "相機",
+    "category": "電子設備",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-19",
+    "title": "充電線",
+    "category": "電子設備",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-20",
+    "title": "確認當地網路與通訊方案",
+    "category": "電子設備",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-21",
+    "title": "筆記本",
+    "category": "田野調查用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-22",
+    "title": "文具",
+    "category": "田野調查用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-23",
+    "title": "訪談題目",
+    "category": "田野調查用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-24",
+    "title": "田野紀錄表",
+    "category": "田野調查用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-25",
+    "title": "相機或錄音設備",
+    "category": "田野調查用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-26",
+    "title": "SDGs 觀察紀錄表",
+    "category": "田野調查用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-27",
+    "title": "訪談同意與隱私注意事項",
+    "category": "田野調查用品",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-28",
+    "title": "確認集合時間",
+    "category": "其他事項",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-29",
+    "title": "確認住宿資訊",
+    "category": "其他事項",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-30",
+    "title": "準備個人預算",
+    "category": "其他事項",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-31",
+    "title": "確認當地文化禁忌",
+    "category": "其他事項",
+    "checked": false,
+    "isCustom": false
+  },
+  {
+    "id": "check-32",
+    "title": "確認環境保護規範",
+    "category": "其他事項",
+    "checked": false,
+    "isCustom": false
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "file": "/images/rock-islands-aerial.jpg",
+    "title": "洛克群島空拍",
+    "caption": "帛琉洛克群島，2016 年 4 月；非個別參訪設施照片。",
+    "author": "Luka Peternel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Rock-Islands-Palau-1-2016-aerial-view-Luka-Peternel.jpg",
+    "changes": "使用 Wikimedia 提供的 1280px 縮圖；網頁可能以 CSS 裁切顯示。圖片衍生版本維持 CC BY-SA 4.0。"
+  },
+  {
+    "file": "/images/rock-islands-lagoon.jpg",
+    "title": "洛克群島潟湖",
+    "caption": "帛琉洛克群島潟湖，2016 年 3 月；非個別參訪設施照片。",
+    "author": "Luka Peternel；Wikimedia 裁切修訂：Andrew J. Kurbiko",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Rock-Islands-Palau-1-2016-sea-view-Luka-Peternel.jpg",
+    "changes": "使用 Wikimedia 提供的 1280px 縮圖；來源版本已裁切與微幅旋轉，網頁可能以 CSS 裁切顯示。圖片衍生版本維持 CC BY-SA 4.0。"
+  },
+  {
+    "file": "/images/ngerukewid.jpg",
+    "title": "Ngerukewid 群島空拍",
+    "caption": "帛琉 Ngerukewid 群島空拍，2016 年 4 月；非石錢島或紅樹林照片。",
+    "author": "Luka Peternel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Ngerukewid-2016-aerial-view-Luka-Peternel.jpg",
+    "changes": "使用 Wikimedia 提供的 1280px 縮圖；網頁可能以 CSS 裁切顯示。圖片衍生版本維持 CC BY-SA 4.0。"
+  }
+]
