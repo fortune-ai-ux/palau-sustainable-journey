@@ -1,0 +1,2 @@
+@import "tailwindcss";
+:root{font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#24313A;background:#F8F5ED;font-synthesis:none}body{margin:0}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}main{min-height:70vh}a{color:inherit}
