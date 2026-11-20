@@ -222,5 +222,12 @@
     "category": "其他事項",
     "checked": false,
     "isCustom": false
+  },
+  {
+    "id": "check-rain-2027",
+    "title": "雨衣／防水袋",
+    "category": "個人用品",
+    "checked": false,
+    "isCustom": false
   }
 ]

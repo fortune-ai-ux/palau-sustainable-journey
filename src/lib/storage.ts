@@ -1,5 +1,10 @@
 import type { TripDay, CheckItem, Transaction, BudgetSettings } from "../types";
 import { validMoney, validRate } from "./money";
+import {
+  contentRevision,
+  swapWeatherDays,
+  addRainItem,
+} from "./contentUpdates";
 const obj = (x: unknown): x is Record<string, unknown> =>
   typeof x === "object" && x !== null;
 const str = (x: unknown) => typeof x === "string";
@@ -80,6 +85,31 @@ export function readStored<T>(
     const parsed = JSON.parse(raw);
     if (!obj(parsed) || parsed.version !== 1 || !validate(parsed.data))
       throw Error("invalid");
+    if (
+      (typeof parsed.contentRevision === "number"
+        ? parsed.contentRevision
+        : 1) < contentRevision &&
+      (key === "days" || key === "checklist")
+    ) {
+      const updated =
+        key === "days"
+          ? swapWeatherDays(parsed.data as TripDay[])
+          : addRainItem(parsed.data as CheckItem[]);
+      if (!validate(updated)) throw Error("invalid migration");
+      try {
+        localStorage.setItem(
+          `palau:v1:${key}`,
+          JSON.stringify({ version: 1, contentRevision, data: updated }),
+        );
+      } catch {
+        return {
+          value: updated,
+          error:
+            "海況調整已顯示，但更新無法儲存。請先匯出備份並確認瀏覽器儲存權限，再重設資料。",
+        };
+      }
+      return { value: updated, error: null };
+    }
     return { value: parsed.data, error: null };
   } catch {
     return {

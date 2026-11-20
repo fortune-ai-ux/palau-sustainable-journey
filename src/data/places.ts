@@ -8,7 +8,7 @@ export const places: Place[] = [
     description:
       "以石灰岩島嶼、海洋湖泊與珊瑚礁構成的海洋景觀，也是本次海域體察的核心場域。從島嶼與海洋的關係，觀察保育與旅遊如何共存。實際出海路線依主辦單位安排。",
     query: "Rock Islands Southern Lagoon Palau",
-    days: [2, 3, 9],
+    days: [2, 3, 13],
     sdgs: [14],
     confirmed: true,
     image: "/images/rock-islands-lagoon.jpg",

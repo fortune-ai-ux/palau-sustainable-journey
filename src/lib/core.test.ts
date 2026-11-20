@@ -81,7 +81,7 @@ describe("defaults and resilient storage", () => {
     expect(
       defaultDays.flatMap((d) => d.activities).every((a) => a.time === null),
     ).toBe(true);
-    expect(defaultChecklist).toHaveLength(32);
+    expect(defaultChecklist).toHaveLength(33);
     expect(places).toHaveLength(16);
   });
   it("validates defaults and rejects corrupt shapes", () => {

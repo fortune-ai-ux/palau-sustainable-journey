@@ -31,6 +31,11 @@ export default function Itinerary() {
   }
   return (
     <div className="page-wrap">
+      {day.date === "2027-08-06" && (
+        <div className="notice" role="status" style={{ marginTop: 0 }}>
+          <strong>因海況不佳，行程已調整</strong>
+        </div>
+      )}
       <PageHeading
         eyebrow="YOUR 15-DAY JOURNEY"
         title="每日行程"

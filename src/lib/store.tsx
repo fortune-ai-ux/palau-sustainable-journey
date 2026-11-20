@@ -9,6 +9,7 @@ import {
   validSettings,
 } from "./storage";
 import { download } from "./money";
+import { contentRevision } from "./contentUpdates";
 function useSaved<T>(
   key: string,
   fallback: T,
@@ -26,7 +27,7 @@ function useSaved<T>(
     try {
       localStorage.setItem(
         `palau:v1:${key}`,
-        JSON.stringify({ version: 1, data: next }),
+        JSON.stringify({ version: 1, contentRevision, data: next }),
       );
       setValue(next);
       setError(null);
