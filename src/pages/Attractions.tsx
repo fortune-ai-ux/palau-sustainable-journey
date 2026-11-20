@@ -1,5 +1,111 @@
-import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { places, categories } from '../data/places';
-import { PageHeading, PlaceCard, MapLink, SDGs } from '../components/UI';
-export default function Attractions(){const {id}=useParams();const [filter,setFilter]=useState('全部');const place=places.find(p=>p.id===id);if(id&&!place)return <div className="section"><h1>找不到這個景點</h1><Link to="/attractions">回到所有景點</Link></div>;if(place)return <div className="page-wrap"><Link className="text-link" to="/attractions">所有景點</Link><PageHeading eyebrow={place.english??'PLACES & STORIES'} title={place.name} description={place.category}/><figure className="detail-photo"><img src={place.image??'/images/rock-islands-aerial.jpg'} alt={place.image?'帛琉洛克群島':'帛琉風景示意，非該設施照片'}/><figcaption>{place.image?'帛琉洛克群島實景':'帛琉風景示意，非該設施照片'} · Luka Peternel / CC BY-SA 4.0</figcaption></figure><div className="detail-grid"><article className="panel"><h2>走進這個地方</h2><p>{place.description}</p><SDGs ids={place.sdgs}/>{place.source&&<p><a className="text-link" href={place.source} target="_blank" rel="noreferrer">查閱地點資料來源（新分頁）</a></p>}</article><aside className="panel"><h3>安排在旅程中</h3><div className="tags">{place.days.map(d=><Link className="chip" key={d} to={`/itinerary?day=${d}`}>Day {d} · {new Date(Date.UTC(2027,6,28+d)).toISOString().slice(5,10).replace('-','/')}</Link>)}</div><p className="pending">{place.confirmed?'地名已核對，實際路線依主辦單位安排。':'位置待確認：僅提供地名搜尋，並非已確認定位。'}</p><MapLink query={place.query}/></aside></div></div>;const shown=places.filter(p=>filter==='全部'||p.category===filter);return <div className="page-wrap"><PageHeading eyebrow="PLACES & STORIES" title="景點與島嶼故事" description="從海洋走進日常，認識這次旅程的 16 個景點與參訪地點。"/><div className="filter-row" aria-label="景點分類">{categories.map(c=><button className={`chip ${filter===c?'selected':''}`} aria-pressed={filter===c} key={c} onClick={()=>setFilter(c)}>{c}</button>)}</div><p className="muted mini">共 {shown.length} 個地點 · 標示「位置待確認」者僅提供地名搜尋，實際參訪請依主辦安排。</p><div className="cards-grid">{shown.map(p=><PlaceCard key={p.id} place={p}/>)}</div></div>}
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { places, categories } from "../data/places";
+import { PageHeading, PlaceCard, MapLink, SDGs } from "../components/UI";
+export default function Attractions() {
+  const { id } = useParams();
+  const [filter, setFilter] = useState("全部");
+  const place = places.find((p) => p.id === id);
+  if (id && !place)
+    return (
+      <div className="section">
+        <h1>找不到這個景點</h1>
+        <Link to="/attractions">回到所有景點</Link>
+      </div>
+    );
+  if (place)
+    return (
+      <div className="page-wrap">
+        <Link className="text-link" to="/attractions">
+          所有景點
+        </Link>
+        <PageHeading
+          eyebrow={place.english ?? "PLACES & STORIES"}
+          title={place.name}
+          description={place.category}
+        />
+        <figure className="detail-photo">
+          <img
+            src={place.image ?? "/images/rock-islands-aerial.jpg"}
+            alt={place.image ? "帛琉洛克群島" : "帛琉風景示意，非該設施照片"}
+          />
+          <figcaption>
+            {place.image ? "帛琉洛克群島實景" : "帛琉風景示意，非該設施照片"} ·
+            Luka Peternel / CC BY-SA 4.0
+          </figcaption>
+        </figure>
+        <div className="detail-grid">
+          <article className="panel">
+            <h2>走進這個地方</h2>
+            <p>{place.description}</p>
+            <SDGs ids={place.sdgs} />
+            {place.source && (
+              <p>
+                <a
+                  className="text-link"
+                  href={place.source}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  查閱地點資料來源（新分頁）
+                </a>
+              </p>
+            )}
+          </article>
+          <aside className="panel">
+            <h3>安排在旅程中</h3>
+            <div className="tags">
+              {place.days.map((d) => (
+                <Link className="chip" key={d} to={`/itinerary?day=${d}`}>
+                  Day {d} ·{" "}
+                  {new Date(Date.UTC(2027, 6, 28 + d))
+                    .toISOString()
+                    .slice(5, 10)
+                    .replace("-", "/")}
+                </Link>
+              ))}
+            </div>
+            <p className="pending">
+              {place.confirmed
+                ? "地名已核對，實際路線依主辦單位安排。"
+                : "位置待確認：僅提供地名搜尋，並非已確認定位。"}
+            </p>
+            <MapLink query={place.query} />
+          </aside>
+        </div>
+      </div>
+    );
+  const shown = places.filter(
+    (p) => filter === "全部" || p.category === filter,
+  );
+  return (
+    <div className="page-wrap">
+      <PageHeading
+        eyebrow="PLACES & STORIES"
+        title="景點與島嶼故事"
+        description="從海洋走進日常，認識這次旅程的 16 個景點與參訪地點。"
+      />
+      <div className="filter-row" aria-label="景點分類">
+        {categories.map((c) => (
+          <button
+            className={`chip ${filter === c ? "selected" : ""}`}
+            aria-pressed={filter === c}
+            key={c}
+            onClick={() => setFilter(c)}
+          >
+            {c}
+          </button>
+        ))}
+      </div>
+      <p className="muted mini">
+        共 {shown.length} 個地點 ·
+        標示「位置待確認」者僅提供地名搜尋，實際參訪請依主辦安排。
+      </p>
+      <div className="cards-grid">
+        {shown.map((p) => (
+          <PlaceCard key={p.id} place={p} />
+        ))}
+      </div>
+    </div>
+  );
+}

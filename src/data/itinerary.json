@@ -65,9 +65,7 @@
     "dayNumber": 2,
     "title": "帛琉永續海洋生態體察 I",
     "description": "",
-    "sdgs": [
-      14
-    ],
+    "sdgs": [14],
     "activities": [
       {
         "id": "d2-a1",
@@ -97,9 +95,7 @@
     "dayNumber": 3,
     "title": "帛琉永續復育實際體察 II",
     "description": "本日包含硨磲海域野放復育行動；實際海域、參與方式與活動時間依主辦單位及在地保育人員確認，不自行採集或野放。",
-    "sdgs": [
-      14
-    ],
+    "sdgs": [14],
     "activities": [
       {
         "id": "d3-a1",
@@ -129,10 +125,7 @@
     "dayNumber": 4,
     "title": "帛琉原民部落人文踏查 I：生活與農漁產業升級",
     "description": "",
-    "sdgs": [
-      2,
-      14
-    ],
+    "sdgs": [2, 14],
     "activities": [
       {
         "id": "d4-a1",
@@ -182,9 +175,7 @@
     "dayNumber": 5,
     "title": "帛琉原民部落人文踏查 II：原民部落文化",
     "description": "",
-    "sdgs": [
-      11
-    ],
+    "sdgs": [11],
     "activities": [
       {
         "id": "d5-a1",
@@ -244,9 +235,7 @@
     "dayNumber": 6,
     "title": "帛琉原民部落人文踏查 III：永續產業",
     "description": "",
-    "sdgs": [
-      12
-    ],
+    "sdgs": [12],
     "activities": [
       {
         "id": "d6-a1",
@@ -286,9 +275,7 @@
     "dayNumber": 7,
     "title": "帛琉原民部落人文踏查 IV：觀光產業",
     "description": "",
-    "sdgs": [
-      15
-    ],
+    "sdgs": [15],
     "activities": [
       {
         "id": "d7-a1",
@@ -318,9 +305,7 @@
     "dayNumber": 8,
     "title": "帛琉原民部落人文踏查 V：產銷物流與市場經濟",
     "description": "",
-    "sdgs": [
-      12
-    ],
+    "sdgs": [12],
     "activities": [
       {
         "id": "d8-a1",
@@ -360,9 +345,7 @@
     "dayNumber": 9,
     "title": "帛琉海域周邊人文生態體察 I",
     "description": "",
-    "sdgs": [
-      14
-    ],
+    "sdgs": [14],
     "activities": [
       {
         "id": "d9-a1",
@@ -392,10 +375,7 @@
     "dayNumber": 10,
     "title": "帛琉海域周邊人文生態體察 II",
     "description": "",
-    "sdgs": [
-      14,
-      15
-    ],
+    "sdgs": [14, 15],
     "activities": [
       {
         "id": "d10-a1",
@@ -465,9 +445,7 @@
     "dayNumber": 11,
     "title": "帛琉文創工藝與原民經濟分配體察",
     "description": "",
-    "sdgs": [
-      12
-    ],
+    "sdgs": [12],
     "activities": [
       {
         "id": "d11-a1",
@@ -487,9 +465,7 @@
     "dayNumber": 12,
     "title": "永續城市與政治制度體察",
     "description": "",
-    "sdgs": [
-      11
-    ],
+    "sdgs": [11],
     "activities": [
       {
         "id": "d12-a1",
@@ -519,9 +495,7 @@
     "dayNumber": 13,
     "title": "永續生態田野調查",
     "description": "",
-    "sdgs": [
-      15
-    ],
+    "sdgs": [15],
     "activities": [
       {
         "id": "d13-a1",
@@ -541,9 +515,7 @@
     "dayNumber": 14,
     "title": "田野觀察與微訪談整理",
     "description": "",
-    "sdgs": [
-      4
-    ],
+    "sdgs": [4],
     "activities": [
       {
         "id": "d14-a1",

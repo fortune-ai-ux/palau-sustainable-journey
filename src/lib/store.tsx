@@ -1,10 +1,107 @@
-import { createContext,useContext,useState,type ReactNode } from 'react';
-import { defaultDays, defaultChecklist } from '../data';
-import type { TripDay, CheckItem, Transaction, BudgetSettings } from '../types';
-import { readStored,validDays,validChecks,validTransactions,validSettings } from './storage';
-import { download } from './money';
-function useSaved<T>(key:string,fallback:T,validate:(x:unknown)=>x is T,notify:(s:string)=>void){const [initial]=useState(()=>readStored(key,fallback,validate));const [value,setValue]=useState(initial.value);const [error,setError]=useState(initial.error);function save(next:T,force=false){if(error&&!force){notify('請先匯出備份並重設異常資料，再進行編輯。');return false}try{localStorage.setItem(`palau:v1:${key}`,JSON.stringify({version:1,data:next}));setValue(next);setError(null);return true}catch{notify('儲存失敗：瀏覽器儲存空間不足或不允許儲存，資料未變更。');return false}}return{value,save,error,reset:()=>save(structuredClone(fallback),true)}}
-function useStoreValue(){const [toast,setToast]=useState('');const notify=(s:string)=>setToast(s);const days=useSaved<TripDay[]>('days',defaultDays,validDays,notify);const checklist=useSaved<CheckItem[]>('checklist',defaultChecklist,validChecks,notify);const transactions=useSaved<Transaction[]>('transactions',[],validTransactions,notify);const settings=useSaved<BudgetSettings>('settings',{budget:'0',rate:'32'},validSettings,notify);const exportAll=()=>{const data:Record<string,unknown>={exportedAt:new Date().toISOString(),version:1,data:{days:days.value,checklist:checklist.value,transactions:transactions.value,settings:settings.value}};try{data.rawStorage=Object.fromEntries(['days','checklist','transactions','settings'].map(k=>[k,localStorage.getItem(`palau:v1:${k}`)]))}catch{data.rawStorage='無法讀取'}download('palau-backup.json',JSON.stringify(data,null,2));notify('已匯出本機資料備份。')};return{days,checklist,transactions,settings,toast,notify,exportAll}}
-const StoreContext=createContext<ReturnType<typeof useStoreValue>|null>(null);
-export function StoreProvider({children}:{children:ReactNode}){const store=useStoreValue();return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>}
-export function useStore(){const ctx=useContext(StoreContext);if(!ctx)throw Error('Missing store');return ctx}
+import { createContext, useContext, useState, type ReactNode } from "react";
+import { defaultDays, defaultChecklist } from "../data";
+import type { TripDay, CheckItem, Transaction, BudgetSettings } from "../types";
+import {
+  readStored,
+  validDays,
+  validChecks,
+  validTransactions,
+  validSettings,
+} from "./storage";
+import { download } from "./money";
+function useSaved<T>(
+  key: string,
+  fallback: T,
+  validate: (x: unknown) => x is T,
+  notify: (s: string) => void,
+) {
+  const [initial] = useState(() => readStored(key, fallback, validate));
+  const [value, setValue] = useState(initial.value);
+  const [error, setError] = useState(initial.error);
+  function save(next: T, force = false) {
+    if (error && !force) {
+      notify("請先匯出備份並重設異常資料，再進行編輯。");
+      return false;
+    }
+    try {
+      localStorage.setItem(
+        `palau:v1:${key}`,
+        JSON.stringify({ version: 1, data: next }),
+      );
+      setValue(next);
+      setError(null);
+      return true;
+    } catch {
+      notify("儲存失敗：瀏覽器儲存空間不足或不允許儲存，資料未變更。");
+      return false;
+    }
+  }
+  return {
+    value,
+    save,
+    error,
+    reset: () => save(structuredClone(fallback), true),
+  };
+}
+function useStoreValue() {
+  const [toast, setToast] = useState("");
+  const notify = (s: string) => setToast(s);
+  const days = useSaved<TripDay[]>("days", defaultDays, validDays, notify);
+  const checklist = useSaved<CheckItem[]>(
+    "checklist",
+    defaultChecklist,
+    validChecks,
+    notify,
+  );
+  const transactions = useSaved<Transaction[]>(
+    "transactions",
+    [],
+    validTransactions,
+    notify,
+  );
+  const settings = useSaved<BudgetSettings>(
+    "settings",
+    { budget: "0", rate: "32" },
+    validSettings,
+    notify,
+  );
+  const exportAll = () => {
+    const data: Record<string, unknown> = {
+      exportedAt: new Date().toISOString(),
+      version: 1,
+      data: {
+        days: days.value,
+        checklist: checklist.value,
+        transactions: transactions.value,
+        settings: settings.value,
+      },
+    };
+    try {
+      data.rawStorage = Object.fromEntries(
+        ["days", "checklist", "transactions", "settings"].map((k) => [
+          k,
+          localStorage.getItem(`palau:v1:${k}`),
+        ]),
+      );
+    } catch {
+      data.rawStorage = "無法讀取";
+    }
+    download("palau-backup.json", JSON.stringify(data, null, 2));
+    notify("已匯出本機資料備份。");
+  };
+  return { days, checklist, transactions, settings, toast, notify, exportAll };
+}
+const StoreContext = createContext<ReturnType<typeof useStoreValue> | null>(
+  null,
+);
+export function StoreProvider({ children }: { children: ReactNode }) {
+  const store = useStoreValue();
+  return (
+    <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+  );
+}
+export function useStore() {
+  const ctx = useContext(StoreContext);
+  if (!ctx) throw Error("Missing store");
+  return ctx;
+}

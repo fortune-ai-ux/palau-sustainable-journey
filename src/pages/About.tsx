@@ -1,7 +1,135 @@
-import { Link } from 'react-router-dom';
-import { CalendarDays, MapPin, Clock, Leaf } from 'lucide-react';
-import { PageHeading } from '../components/UI';
-import { sdgNames,sdgDescriptions } from '../data/places';
-import { defaultDays } from '../data';
-import training from '../data/training.json';
-export default function About(){return <div className="page-wrap"><PageHeading eyebrow="ABOUT THE PROJECT" title="與島嶼同行，讓學習發生" description="青年百億海外圓夢基金計畫－帛琉南島永續實踐計畫"/><section className="about-intro"><img src="/images/ngerukewid.jpg" alt="帛琉 Ngerukewid 群島自然景觀"/><div><p className="eyebrow">LEARN · CONNECT · ACT</p><h2>從看見，走向理解。</h2><p>2027 年 7 月 29 日至 8 月 12 日，我們將以 15 天的實地體察、文化交流與田野調查，探索帛琉的自然與日常。</p><p>以 ESG 的環境、社會與治理角度觀察，以 SDGs 作為整理發現的線索，在跨文化對話中學習永續實踐。</p><p className="mini muted">本網站依使用者提供計畫製作，非官方公告；活動、參訪許可與時程請以主辦單位確認資訊為準。</p></div></section><section className="section-inner"><p className="eyebrow">OUR OBJECTIVES</p><h2>這趟旅程，我們想學會的事</h2><div className="goals-grid">{['認識帛琉的自然生態。','了解永續旅遊與環境治理。','觀察海洋生態保育與復育行動。','認識帛琉原住民文化。','透過田野調查與訪談學習跨文化溝通。','了解當地永續產業與市場經濟。'].map(s=><div key={s}><Leaf size={20}/><p>{s}</p></div>)}</div></section><section id="sdgs" className="section-inner"><p className="eyebrow">SUSTAINABLE DEVELOPMENT GOALS</p><h2>六項目標，串起每一天的發現</h2><div className="sdg-grid">{Object.entries(sdgNames).map(([id,name])=><article className={`panel sdg-block sdg-${id}`} id={`sdg-${id}`} key={id}><span className="sdg-number">{id}</span><h3>{name}</h3><p>{sdgDescriptions[Number(id)]}</p><div className="tags">{defaultDays.filter(d=>d.sdgs.includes(Number(id))).map(d=><Link className="chip" to={`/itinerary?day=${d.dayNumber}`} key={d.id}>Day {d.dayNumber}</Link>)}</div></article>)}</div></section><section className="section-inner" id="training"><p className="eyebrow">PRE-DEPARTURE TRAINING</p><h2>行前培訓，從彼此認識開始</h2><div className="training-meta"><span><CalendarDays size={18}/>2027/07/14</span><span><Clock size={18}/>08:00–17:30</span><span><MapPin size={18}/>銘傳大學基河校區 J616 會議室</span></div><div className="training-timeline">{training.map(([time,title])=><article key={time}><time>{time}</time><p>{title}</p></article>)}</div></section><section className="panel source-section" id="sources"><h2>內容與影像來源</h2><p>行程及培訓：使用者提供之計畫原文。景點資料在各景點頁列出核對來源；未核實位置以地名搜尋呈現。</p><p>帛琉照片：Luka Peternel，<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>。圖片縮放及版面裁切；原始來源與授權詳見<a href="/images-sources.json" target="_blank" rel="noreferrer">圖片來源清單</a>。Ngerukewid 景觀不代表石錢島。</p><p className="mini muted">行程、準備與記帳資料採瀏覽器 localStorage 儲存，不會跨裝置同步。請勿記錄護照號碼等敏感個資。</p></section></div>}
+import { Link } from "react-router-dom";
+import { CalendarDays, MapPin, Clock, Leaf } from "lucide-react";
+import { PageHeading } from "../components/UI";
+import { sdgNames, sdgDescriptions } from "../data/places";
+import { defaultDays } from "../data";
+import training from "../data/training.json";
+export default function About() {
+  return (
+    <div className="page-wrap">
+      <PageHeading
+        eyebrow="ABOUT THE PROJECT"
+        title="與島嶼同行，讓學習發生"
+        description="青年百億海外圓夢基金計畫－帛琉南島永續實踐計畫"
+      />
+      <section className="about-intro">
+        <img src="/images/ngerukewid.jpg" alt="帛琉 Ngerukewid 群島自然景觀" />
+        <div>
+          <p className="eyebrow">LEARN · CONNECT · ACT</p>
+          <h2>從看見，走向理解。</h2>
+          <p>
+            2027 年 7 月 29 日至 8 月 12 日，我們將以 15
+            天的實地體察、文化交流與田野調查，探索帛琉的自然與日常。
+          </p>
+          <p>
+            以 ESG 的環境、社會與治理角度觀察，以 SDGs
+            作為整理發現的線索，在跨文化對話中學習永續實踐。
+          </p>
+          <p className="mini muted">
+            本網站依使用者提供計畫製作，非官方公告；活動、參訪許可與時程請以主辦單位確認資訊為準。
+          </p>
+        </div>
+      </section>
+      <section className="section-inner">
+        <p className="eyebrow">OUR OBJECTIVES</p>
+        <h2>這趟旅程，我們想學會的事</h2>
+        <div className="goals-grid">
+          {[
+            "認識帛琉的自然生態。",
+            "了解永續旅遊與環境治理。",
+            "觀察海洋生態保育與復育行動。",
+            "認識帛琉原住民文化。",
+            "透過田野調查與訪談學習跨文化溝通。",
+            "了解當地永續產業與市場經濟。",
+          ].map((s) => (
+            <div key={s}>
+              <Leaf size={20} />
+              <p>{s}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section id="sdgs" className="section-inner">
+        <p className="eyebrow">SUSTAINABLE DEVELOPMENT GOALS</p>
+        <h2>六項目標，串起每一天的發現</h2>
+        <div className="sdg-grid">
+          {Object.entries(sdgNames).map(([id, name]) => (
+            <article
+              className={`panel sdg-block sdg-${id}`}
+              id={`sdg-${id}`}
+              key={id}
+            >
+              <span className="sdg-number">{id}</span>
+              <h3>{name}</h3>
+              <p>{sdgDescriptions[Number(id)]}</p>
+              <div className="tags">
+                {defaultDays
+                  .filter((d) => d.sdgs.includes(Number(id)))
+                  .map((d) => (
+                    <Link
+                      className="chip"
+                      to={`/itinerary?day=${d.dayNumber}`}
+                      key={d.id}
+                    >
+                      Day {d.dayNumber}
+                    </Link>
+                  ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="section-inner" id="training">
+        <p className="eyebrow">PRE-DEPARTURE TRAINING</p>
+        <h2>行前培訓，從彼此認識開始</h2>
+        <div className="training-meta">
+          <span>
+            <CalendarDays size={18} />
+            2027/07/14
+          </span>
+          <span>
+            <Clock size={18} />
+            08:00–17:30
+          </span>
+          <span>
+            <MapPin size={18} />
+            銘傳大學基河校區 J616 會議室
+          </span>
+        </div>
+        <div className="training-timeline">
+          {training.map(([time, title]) => (
+            <article key={time}>
+              <time>{time}</time>
+              <p>{title}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="panel source-section" id="sources">
+        <h2>內容與影像來源</h2>
+        <p>
+          行程及培訓：使用者提供之計畫原文。景點資料在各景點頁列出核對來源；未核實位置以地名搜尋呈現。
+        </p>
+        <p>
+          帛琉照片：Luka Peternel，
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            CC BY-SA 4.0
+          </a>
+          。圖片縮放及版面裁切；原始來源與授權詳見
+          <a href="/images-sources.json" target="_blank" rel="noreferrer">
+            圖片來源清單
+          </a>
+          。Ngerukewid 景觀不代表石錢島。
+        </p>
+        <p className="mini muted">
+          行程、準備與記帳資料採瀏覽器 localStorage
+          儲存，不會跨裝置同步。請勿記錄護照號碼等敏感個資。
+        </p>
+      </section>
+    </div>
+  );
+}

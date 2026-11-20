@@ -1,11 +1,137 @@
-import { useEffect, useRef, type ReactNode } from 'react';
-import { MapPin, X, Leaf } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { mapsUrl, sdgNames } from '../data/places';
-import type { Place } from '../types';
-export function PageHeading({eyebrow,title,description,children}:{eyebrow:string;title:string;description:string;children?:ReactNode}){return <div className="page-heading"><div><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="muted">{description}</p></div>{children}</div>}
-export function SDGs({ids}:{ids:number[]}){return <div className="tags">{ids.map(id=><Link key={id} className={`tag sdg-${id}`} to={`/about#sdg-${id}`}>SDG {id} · {sdgNames[id]}</Link>)}</div>}
-export function MapLink({query}:{query:string}){return <a className="text-link" target="_blank" rel="noopener noreferrer" href={mapsUrl(query)}><MapPin size={16}/> Google Maps<span className="sr-only">（新分頁）</span></a>}
-export function PlaceCard({place}:{place:Place}){return <article className="place-card"><Link to={`/attractions/${place.id}`} className="place-image"><img src={place.image??'/images/rock-islands-aerial.jpg'} alt={place.image?'洛克群島海灣實景':'帛琉風景示意，非該設施照片'} loading="lazy"/><span className="image-tag">{place.category}</span>{!place.image&&<small className="image-caption">帛琉風景示意 · 非該設施照片</small>}</Link><div className="place-body"><div className="mini muted">{place.days.map(n=>`DAY ${n}`).join(' / ')}</div><Link to={`/attractions/${place.id}`}><h3>{place.name}</h3></Link><p>{place.description}</p><div className="place-bottom"><span className={place.confirmed?'muted mini':'pending mini'}>{place.confirmed?'地名已核對 · 路線依安排':'位置待確認'}</span><MapLink query={place.query}/></div></div></article>}
-export function Modal({title,onClose,children}:{title:string;onClose:()=>void;children:ReactNode}){const ref=useRef<HTMLDialogElement>(null);useEffect(()=>{const el=ref.current;const previous=document.activeElement as HTMLElement;el?.showModal();return()=>{el?.close();previous?.focus()}},[]);return <dialog ref={ref} onCancel={e=>{e.preventDefault();onClose()}} onClick={e=>{if(e.target===ref.current)onClose()}}><div className="modal-header"><h2>{title}</h2><button className="icon-btn" aria-label="關閉視窗" onClick={onClose}><X/></button></div>{children}</dialog>}
-export function Empty({children}:{children:ReactNode}){return <div className="empty"><Leaf size={32}/><p>{children}</p></div>}
+import { useEffect, useRef, type ReactNode } from "react";
+import { MapPin, X, Leaf } from "lucide-react";
+import { Link } from "react-router-dom";
+import { mapsUrl, sdgNames } from "../data/places";
+import type { Place } from "../types";
+export function PageHeading({
+  eyebrow,
+  title,
+  description,
+  children,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+  children?: ReactNode;
+}) {
+  return (
+    <div className="page-heading">
+      <div>
+        <p className="eyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
+        <p className="muted">{description}</p>
+      </div>
+      {children}
+    </div>
+  );
+}
+export function SDGs({ ids }: { ids: number[] }) {
+  return (
+    <div className="tags">
+      {ids.map((id) => (
+        <Link key={id} className={`tag sdg-${id}`} to={`/about#sdg-${id}`}>
+          SDG {id} · {sdgNames[id]}
+        </Link>
+      ))}
+    </div>
+  );
+}
+export function MapLink({ query }: { query: string }) {
+  return (
+    <a
+      className="text-link"
+      target="_blank"
+      rel="noopener noreferrer"
+      href={mapsUrl(query)}
+    >
+      <MapPin size={16} /> Google Maps
+      <span className="sr-only">（新分頁）</span>
+    </a>
+  );
+}
+export function PlaceCard({ place }: { place: Place }) {
+  return (
+    <article className="place-card">
+      <Link to={`/attractions/${place.id}`} className="place-image">
+        <img
+          src={place.image ?? "/images/rock-islands-aerial.jpg"}
+          alt={place.image ? "洛克群島海灣實景" : "帛琉風景示意，非該設施照片"}
+          loading="lazy"
+        />
+        <span className="image-tag">{place.category}</span>
+        {!place.image && (
+          <small className="image-caption">帛琉風景示意 · 非該設施照片</small>
+        )}
+      </Link>
+      <div className="place-body">
+        <div className="mini muted">
+          {place.days
+            .map(
+              (n) =>
+                `DAY ${n} · ${new Date(Date.UTC(2027, 6, 28 + n)).toISOString().slice(5, 10).replace("-", "/")}`,
+            )
+            .join(" / ")}
+        </div>
+        <Link to={`/attractions/${place.id}`}>
+          <h3>{place.name}</h3>
+        </Link>
+        <p>{place.description}</p>
+        <SDGs ids={place.sdgs} />
+        <div className="place-bottom">
+          <span className={place.confirmed ? "muted mini" : "pending mini"}>
+            {place.confirmed ? "地名已核對 · 路線依安排" : "位置待確認"}
+          </span>
+          <MapLink query={place.query} />
+        </div>
+      </div>
+    </article>
+  );
+}
+export function Modal({
+  title,
+  onClose,
+  children,
+}: {
+  title: string;
+  onClose: () => void;
+  children: ReactNode;
+}) {
+  const ref = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    const previous = document.activeElement as HTMLElement;
+    el?.showModal();
+    return () => {
+      el?.close();
+      previous?.focus();
+    };
+  }, []);
+  return (
+    <dialog
+      ref={ref}
+      onCancel={(e) => {
+        e.preventDefault();
+        onClose();
+      }}
+      onClick={(e) => {
+        if (e.target === ref.current) onClose();
+      }}
+    >
+      <div className="modal-header">
+        <h2>{title}</h2>
+        <button className="icon-btn" aria-label="關閉視窗" onClick={onClose}>
+          <X />
+        </button>
+      </div>
+      {children}
+    </dialog>
+  );
+}
+export function Empty({ children }: { children: ReactNode }) {
+  return (
+    <div className="empty">
+      <Leaf size={32} />
+      <p>{children}</p>
+    </div>
+  );
+}

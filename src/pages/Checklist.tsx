@@ -1,5 +1,164 @@
-import { useState,type FormEvent } from 'react';
-import { Plus, RotateCcw, Trash2, Check } from 'lucide-react';
-import { PageHeading } from '../components/UI';
-import { useStore } from '../lib/store';
-export default function Checklist(){const {checklist,notify}=useStore();const [title,setTitle]=useState('');const [category,setCategory]=useState('個人用品');const groups=['證件與重要資料','個人用品','電子設備','田野調查用品','其他事項'];const count=checklist.value.filter(i=>i.checked).length;const pct=Math.round(count/checklist.value.length*100)||0;function add(e:FormEvent){e.preventDefault();if(!title.trim())return;if(checklist.save([...checklist.value,{id:crypto.randomUUID(),title:title.trim(),category,checked:false,isCustom:true}])){setTitle('');notify('已新增準備項目。')}}return <div className="page-wrap"><PageHeading eyebrow="BEFORE WE GO" title="行前準備" description="整理好行囊，也為即將開始的學習留一點空間。"><button className="button outline" onClick={()=>{if(confirm('重設所有勾選並移除自訂項目？'))if(checklist.reset())notify('已還原建議清單。')}}><RotateCcw size={17}/>重設清單</button></PageHeading><section className="progress-panel"><div className="progress-icon"><Check/></div><div><div className="section-title"><h2>距離準備完成，又近了一步</h2><strong>{pct}%</strong></div><div className="progress" role="progressbar" aria-label="行前準備完成率" aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct}><i style={{width:`${pct}%`}}/></div><p>已完成 {count} / {checklist.value.length} 項 · 勾選狀態會儲存在此瀏覽器</p></div></section><p className="notice">以下為建議準備項目，不代表官方入境或計畫強制規定。入境與環境規範請於出發前查閱最新官方資訊。</p><form className="panel inline-form" onSubmit={add}><label className="grow">自訂準備項目<input value={title} onChange={e=>setTitle(e.target.value)} maxLength={100} required placeholder="還有什麼想帶上旅途？"/></label><label>分類<select value={category} onChange={e=>setCategory(e.target.value)}>{groups.map(c=><option key={c}>{c}</option>)}</select></label><button className="button primary" type="submit"><Plus size={18}/>新增項目</button></form><div className="check-grid">{groups.map((group,i)=><section key={group} className="panel"><div className="check-title"><span>0{i+1}</span><h2>{group}</h2></div>{checklist.value.filter(item=>item.category===group).map(item=><div className={`check-item ${item.checked?'checked':''}`} key={item.id}><label><input type="checkbox" checked={item.checked} onChange={()=>{checklist.save(checklist.value.map(x=>x.id===item.id?{...x,checked:!x.checked}:x))}}/><span>{item.title}</span></label>{item.isCustom&&<button className="icon-btn" aria-label={`刪除${item.title}`} onClick={()=>{if(confirm(`刪除「${item.title}」？`))if(checklist.save(checklist.value.filter(x=>x.id!==item.id)))notify('已刪除自訂項目。')}}><Trash2 size={16}/></button>}</div>)}</section>)}</div></div>}
+import { useState, type FormEvent } from "react";
+import { Plus, RotateCcw, Trash2, Check } from "lucide-react";
+import { PageHeading } from "../components/UI";
+import { useStore } from "../lib/store";
+export default function Checklist() {
+  const { checklist, notify } = useStore();
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("個人用品");
+  const groups = [
+    "證件與重要資料",
+    "個人用品",
+    "電子設備",
+    "田野調查用品",
+    "其他事項",
+  ];
+  const count = checklist.value.filter((i) => i.checked).length;
+  const pct = Math.round((count / checklist.value.length) * 100) || 0;
+  function add(e: FormEvent) {
+    e.preventDefault();
+    if (!title.trim()) return;
+    if (
+      checklist.save([
+        ...checklist.value,
+        {
+          id: crypto.randomUUID(),
+          title: title.trim(),
+          category,
+          checked: false,
+          isCustom: true,
+        },
+      ])
+    ) {
+      setTitle("");
+      notify("已新增準備項目。");
+    }
+  }
+  return (
+    <div className="page-wrap">
+      <PageHeading
+        eyebrow="BEFORE WE GO"
+        title="行前準備"
+        description="整理好行囊，也為即將開始的學習留一點空間。"
+      >
+        <button
+          className="button outline"
+          onClick={() => {
+            if (confirm("重設所有勾選並移除自訂項目？"))
+              if (checklist.reset()) notify("已還原建議清單。");
+          }}
+        >
+          <RotateCcw size={17} />
+          重設清單
+        </button>
+      </PageHeading>
+      <section className="progress-panel">
+        <div className="progress-icon">
+          <Check />
+        </div>
+        <div>
+          <div className="section-title">
+            <h2>距離準備完成，又近了一步</h2>
+            <strong>{pct}%</strong>
+          </div>
+          <div
+            className="progress"
+            role="progressbar"
+            aria-label="行前準備完成率"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={pct}
+          >
+            <i style={{ width: `${pct}%` }} />
+          </div>
+          <p>
+            已完成 {count} / {checklist.value.length} 項 ·
+            勾選狀態會儲存在此瀏覽器
+          </p>
+        </div>
+      </section>
+      <p className="notice">
+        以下為建議準備項目，不代表官方入境或計畫強制規定。入境與環境規範請於出發前查閱最新官方資訊。
+      </p>
+      <form className="panel inline-form" onSubmit={add}>
+        <label className="grow">
+          自訂準備項目
+          <input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            maxLength={100}
+            required
+            placeholder="還有什麼想帶上旅途？"
+          />
+        </label>
+        <label>
+          分類
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            {groups.map((c) => (
+              <option key={c}>{c}</option>
+            ))}
+          </select>
+        </label>
+        <button className="button primary" type="submit">
+          <Plus size={18} />
+          新增項目
+        </button>
+      </form>
+      <div className="check-grid">
+        {groups.map((group, i) => (
+          <section key={group} className="panel">
+            <div className="check-title">
+              <span>0{i + 1}</span>
+              <h2>{group}</h2>
+            </div>
+            {checklist.value
+              .filter((item) => item.category === group)
+              .map((item) => (
+                <div
+                  className={`check-item ${item.checked ? "checked" : ""}`}
+                  key={item.id}
+                >
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={item.checked}
+                      onChange={() => {
+                        checklist.save(
+                          checklist.value.map((x) =>
+                            x.id === item.id
+                              ? { ...x, checked: !x.checked }
+                              : x,
+                          ),
+                        );
+                      }}
+                    />
+                    <span>{item.title}</span>
+                  </label>
+                  {item.isCustom && (
+                    <button
+                      className="icon-btn"
+                      aria-label={`刪除${item.title}`}
+                      onClick={() => {
+                        if (confirm(`刪除「${item.title}」？`))
+                          if (
+                            checklist.save(
+                              checklist.value.filter((x) => x.id !== item.id),
+                            )
+                          )
+                            notify("已刪除自訂項目。");
+                      }}
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  )}
+                </div>
+              ))}
+          </section>
+        ))}
+      </div>
+    </div>
+  );
+}

@@ -1,10 +1,90 @@
-import type { TripDay, CheckItem, Transaction, BudgetSettings } from '../types';
-import { validMoney, validRate } from './money';
-const obj=(x:unknown):x is Record<string,unknown>=>typeof x==='object'&&x!==null;
-const str=(x:unknown)=>typeof x==='string';
-const unique=(xs:{id:string}[])=>new Set(xs.map(x=>x.id)).size===xs.length;
-export const validDays=(x:unknown):x is TripDay[]=>Array.isArray(x)&&x.length===15&&unique(x)&&x.every((d,i)=>obj(d)&&d.id===`day-${i+1}`&&d.dayNumber===i+1&&str(d.date)&&str(d.title)&&str(d.description)&&Array.isArray(d.sdgs)&&d.sdgs.every(n=>[2,4,11,12,14,15].includes(n))&&Array.isArray(d.activities)&&unique(d.activities)&&d.activities.every(a=>obj(a)&&str(a.id)&&str(a.title)&&str(a.description)&&(a.time===null||str(a.time))&&str(a.location)&&(a.placeId===null||str(a.placeId))&&str(a.category)&&typeof a.isCustom==='boolean'));
-export const validChecks=(x:unknown):x is CheckItem[]=>Array.isArray(x)&&x.every(a=>obj(a)&&str(a.id)&&str(a.title)&&str(a.category)&&typeof a.checked==='boolean'&&typeof a.isCustom==='boolean')&&unique(x);
-export const validTransactions=(x:unknown):x is Transaction[]=>Array.isArray(x)&&x.every(a=>obj(a)&&str(a.id)&&str(a.title)&&str(a.note)&&str(a.category)&&typeof a.amount==='string'&&validMoney(a.amount)&&['income','expense'].includes(String(a.type))&&['TWD','USD'].includes(String(a.currency))&&typeof a.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(a.date))&&unique(x);
-export const validSettings=(x:unknown):x is BudgetSettings=>obj(x)&&typeof x.budget==='string'&&validMoney(x.budget,true)&&typeof x.rate==='string'&&validRate(x.rate);
-export function readStored<T>(key:string,fallback:T,validate:(x:unknown)=>x is T):{value:T;error:string|null}{try{const raw=localStorage.getItem(`palau:v1:${key}`);if(!raw)return{value:structuredClone(fallback),error:null};const parsed=JSON.parse(raw);if(!obj(parsed)||parsed.version!==1||!validate(parsed.data))throw Error('invalid');return{value:parsed.data,error:null}}catch{return{value:structuredClone(fallback),error:`「${key}」資料無法讀取，已暫用預設值。原始資料尚未覆寫，可先匯出備份，再重設。`}}}
+import type { TripDay, CheckItem, Transaction, BudgetSettings } from "../types";
+import { validMoney, validRate } from "./money";
+const obj = (x: unknown): x is Record<string, unknown> =>
+  typeof x === "object" && x !== null;
+const str = (x: unknown) => typeof x === "string";
+const unique = (xs: { id: string }[]) =>
+  new Set(xs.map((x) => x.id)).size === xs.length;
+export const validDays = (x: unknown): x is TripDay[] =>
+  Array.isArray(x) &&
+  x.length === 15 &&
+  unique(x) &&
+  x.every(
+    (d, i) =>
+      obj(d) &&
+      d.id === `day-${i + 1}` &&
+      d.dayNumber === i + 1 &&
+      str(d.date) &&
+      str(d.title) &&
+      str(d.description) &&
+      Array.isArray(d.sdgs) &&
+      d.sdgs.every((n) => [2, 4, 11, 12, 14, 15].includes(n)) &&
+      Array.isArray(d.activities) &&
+      unique(d.activities) &&
+      d.activities.every(
+        (a) =>
+          obj(a) &&
+          str(a.id) &&
+          str(a.title) &&
+          str(a.description) &&
+          (a.time === null || str(a.time)) &&
+          str(a.location) &&
+          (a.placeId === null || str(a.placeId)) &&
+          str(a.category) &&
+          typeof a.isCustom === "boolean",
+      ),
+  );
+export const validChecks = (x: unknown): x is CheckItem[] =>
+  Array.isArray(x) &&
+  x.every(
+    (a) =>
+      obj(a) &&
+      str(a.id) &&
+      str(a.title) &&
+      str(a.category) &&
+      typeof a.checked === "boolean" &&
+      typeof a.isCustom === "boolean",
+  ) &&
+  unique(x);
+export const validTransactions = (x: unknown): x is Transaction[] =>
+  Array.isArray(x) &&
+  x.every(
+    (a) =>
+      obj(a) &&
+      str(a.id) &&
+      str(a.title) &&
+      str(a.note) &&
+      str(a.category) &&
+      typeof a.amount === "string" &&
+      validMoney(a.amount) &&
+      ["income", "expense"].includes(String(a.type)) &&
+      ["TWD", "USD"].includes(String(a.currency)) &&
+      typeof a.date === "string" &&
+      /^\d{4}-\d{2}-\d{2}$/.test(a.date),
+  ) &&
+  unique(x);
+export const validSettings = (x: unknown): x is BudgetSettings =>
+  obj(x) &&
+  typeof x.budget === "string" &&
+  validMoney(x.budget, true) &&
+  typeof x.rate === "string" &&
+  validRate(x.rate);
+export function readStored<T>(
+  key: string,
+  fallback: T,
+  validate: (x: unknown) => x is T,
+): { value: T; error: string | null } {
+  try {
+    const raw = localStorage.getItem(`palau:v1:${key}`);
+    if (!raw) return { value: structuredClone(fallback), error: null };
+    const parsed = JSON.parse(raw);
+    if (!obj(parsed) || parsed.version !== 1 || !validate(parsed.data))
+      throw Error("invalid");
+    return { value: parsed.data, error: null };
+  } catch {
+    return {
+      value: structuredClone(fallback),
+      error: `「${key}」資料無法讀取，已暫用預設值。原始資料尚未覆寫，可先匯出備份，再重設。`,
+    };
+  }
+}
